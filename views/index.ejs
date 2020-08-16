@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Side rendered app with HMR</title>
+  <style>
+    /* Styles added at server side,
+       add critical above the fold css here 
+     */
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .critical-above-the-fold-stuff {
+      width: 50rem;
+      margin: auto;
+      height: 400px;
+      padding: 10px;
+      background-color: aliceblue;
+    }
+
+    .critical-above-the-fold-stuff h3 {
+      color: #48b6ff
+    }
+
+    .critical-above-the-fold-stuff p {
+      color: #62717b
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This is injected at server side. -->
+  <div class="critical-above-the-fold-stuff">
+    <h3>
+      Rendered by server
+    </h3>
+    <p>
+      Name: <span><%= name %></span>
+    </p>
+    <p>
+      Rank: <span><%= rank %></span>
+    </p>
+  </div>
+  <!-- this will be the root of react app -->
+  <div id="#app"></div>
+  <script src="/bundle.js" defer></script>
+</body>
+
+</html>

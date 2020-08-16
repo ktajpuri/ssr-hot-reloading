@@ -1,0 +1,19 @@
+.cards {
+  &__container {
+    width: 50rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    width: 200px;
+    height: 200px;
+    background-color: #cddc39ad;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
